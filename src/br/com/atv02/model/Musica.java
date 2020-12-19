@@ -1,6 +1,6 @@
 package br.com.atv02.model;
 
-public abstract class Musica {
+public abstract class Musica extends Produto{
 	private String autor;
 	private int numFaixas;
 

@@ -28,7 +28,10 @@ public class CDs extends Musica {
 	public void setDuplo(boolean duplo) {
 		this.duplo = duplo;
 	}
-
+	
+	public double calcularDiario(){
+		return 10;
+	}
 	@Override
 	public String toString() {
 		return "CDs [arranhado=" + arranhado + ", duplo=" + duplo + "]";

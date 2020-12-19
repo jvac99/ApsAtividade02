@@ -20,6 +20,10 @@ public class LPs extends Musica {
 		this.raro = raro;
 	}
 
+	public double calcularDiario(){
+		return 20;
+	}
+	
 	@Override
 	public String toString() {
 		return "LPs [raro=" + raro + "]";

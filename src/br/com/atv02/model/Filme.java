@@ -1,6 +1,6 @@
 package br.com.atv02.model;
 
-public abstract class Filme {
+public abstract class Filme extends Produto{
 	private int anoLancamento, duracao;
 
 	public Filme() {

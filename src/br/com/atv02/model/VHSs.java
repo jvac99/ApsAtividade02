@@ -19,7 +19,11 @@ public class VHSs extends Filme {
 	public void setCores(boolean cores) {
 		this.cores = cores;
 	}
-
+	
+	public double calcularDiario(){
+		return 5;
+	}
+	
 	@Override
 	public String toString() {
 		return "VHSs [cores=" + cores + "]";

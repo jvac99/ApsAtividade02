@@ -21,7 +21,11 @@ public class Blurays extends Filme {
 	public void setIdiomas(String[] idiomas) {
 		this.idiomas = idiomas;
 	}
-
+	
+	public double calcularDiario(){
+		return 15;
+	}
+	
 	@Override
 	public String toString() {
 		return "Blurays [idiomas=" + Arrays.toString(idiomas) + "]";

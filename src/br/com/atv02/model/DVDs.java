@@ -19,7 +19,11 @@ public class DVDs extends Filme {
 	public void setArranhado(boolean arranhado) {
 		this.arranhado = arranhado;
 	}
-
+	
+	public double calcularDiario(){
+		return 10;
+	}
+	
 	@Override
 	public String toString() {
 		return "DVDs [arranhado=" + arranhado + "]";
