@@ -4,10 +4,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RepositorioPessoas {
-	Map<String, Pessoa> pessoas = new HashMap<String, Pessoa>();
+	Map<Integer, Pessoa> pessoas = new HashMap<Integer, Pessoa>();
 
 	public RepositorioPessoas() {
-		// TODO Auto-generated constructor stub
+
 	}
 
+	public void adicionar(Pessoa pessoa) {
+		pessoas.put(pessoa.getMatricula(), pessoa);
+		System.out.println(pessoas);
+
+	}
+
+	public Pessoa buscar(int matricula) {
+		return pessoas.get(matricula);
+	}
+
+	public void remover(int matricula) {
+		System.out.println("Removido: " + pessoas.remove(matricula));
+	}
 }
