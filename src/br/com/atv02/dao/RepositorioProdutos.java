@@ -15,7 +15,10 @@ public class RepositorioProdutos {
 	public void adicionar(Produto produto) {
 		produtos.put(produto.getCodigo(), produto);
 		System.out.println(produtos);
+	}
 
+	public void alterar(String codigo, Produto produto) {
+		produtos.replace(codigo, produto);
 	}
 
 	public Produto buscar(String codigo) {

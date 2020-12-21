@@ -20,7 +20,7 @@ public class DVDs extends Filme {
 		this.arranhado = arranhado;
 	}
 	
-	public double calcularDiario(){
+	public double calcularDiaria(){
 		return 10;
 	}
 	

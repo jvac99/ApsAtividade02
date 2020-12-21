@@ -22,7 +22,7 @@ public class Blurays extends Filme {
 		this.idiomas = idiomas;
 	}
 	
-	public double calcularDiario(){
+	public double calcularDiaria(){
 		return 15;
 	}
 	

@@ -5,18 +5,19 @@ public abstract class Produto {
 	private boolean locado;
 
 	public Produto() {
+
 	}
 
 	public String getCodigo() {
 		return codigo;
 	}
 
-	public Produto(String codigo, String titulo, String genero, boolean locado) {
+	public Produto(String codigo, String titulo, String genero) {
 		super();
 		this.codigo = codigo;
 		this.titulo = titulo;
 		this.genero = genero;
-		this.locado = locado;
+		this.locado = false;
 	}
 
 	public String getTitulo() {
@@ -47,7 +48,7 @@ public abstract class Produto {
 		this.locado = locado;
 	}
 
-	public abstract double calcularDiario();
+	public abstract double calcularDiaria();
 
 	@Override
 	public String toString() {

@@ -20,7 +20,7 @@ public class LPs extends Musica {
 		this.raro = raro;
 	}
 
-	public double calcularDiario(){
+	public double calcularDiaria(){
 		return 20;
 	}
 	

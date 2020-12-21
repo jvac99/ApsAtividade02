@@ -20,7 +20,7 @@ public class VHSs extends Filme {
 		this.cores = cores;
 	}
 	
-	public double calcularDiario(){
+	public double calcularDiaria(){
 		return 5;
 	}
 	

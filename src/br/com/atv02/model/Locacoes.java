@@ -14,6 +14,13 @@ public class Locacoes {
 		dataPrevistaEntrega = dataSaida.plusDays(2);
 	}
 
+	public Locacoes(String codigo, int matricula) {
+		dataSaida = LocalDate.now();
+		dataPrevistaEntrega = dataSaida.plusDays(2);
+		matriculaCliente = matricula;
+		codigoProduto = codigo;
+	}
+
 	public String getCodigoProduto() {
 		return codigoProduto;
 	}
@@ -36,5 +43,5 @@ public class Locacoes {
 		return "Locacoes [codigoProduto=" + codigoProduto + ", matriculaCliente=" + matriculaCliente + ", dataSaida="
 				+ dataSaida.format(formatter) + ", dataPrevistaEntrega=" + dataPrevistaEntrega.format(formatter) + "]";
 	}
-	
+
 }

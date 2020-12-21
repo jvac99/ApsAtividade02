@@ -29,7 +29,7 @@ public class CDs extends Musica {
 		this.duplo = duplo;
 	}
 	
-	public double calcularDiario(){
+	public double calcularDiaria(){
 		return 10;
 	}
 	
