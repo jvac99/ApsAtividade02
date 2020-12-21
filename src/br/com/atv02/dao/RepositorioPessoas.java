@@ -1,7 +1,9 @@
-package br.com.atv02.model;
+package br.com.atv02.dao;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import br.com.atv02.model.Pessoa;
 
 public class RepositorioPessoas {
 	Map<Integer, Pessoa> pessoas = new HashMap<Integer, Pessoa>();
@@ -23,4 +25,8 @@ public class RepositorioPessoas {
 	public void remover(int matricula) {
 		System.out.println("Removido: " + pessoas.remove(matricula));
 	}
+
+	public void listar() {
+		System.out.print(pessoas);
+	}	
 }

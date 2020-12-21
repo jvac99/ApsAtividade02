@@ -16,6 +16,13 @@ public class Cliente extends Pessoa {
 		this.sexo = sexo;
 	}
 
+	public Cliente(String nome, int matricula, String endereco, int idade, char sexo) {
+		super(nome, matricula);
+		this.endereco = endereco;
+		this.idade = idade;
+		this.sexo = sexo;
+	}
+
 	public String getEndereco() {
 		return endereco;
 	}

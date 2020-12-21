@@ -1,7 +1,9 @@
-package br.com.atv02.model;
+package br.com.atv02.dao;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import br.com.atv02.model.Produto;
 
 public class RepositorioProdutos {
 	Map<String, Produto> produtos = new HashMap<String, Produto>();
@@ -22,5 +24,9 @@ public class RepositorioProdutos {
 
 	public void remover(String codigo) {
 		System.out.println("Removido: " + produtos.remove(codigo));
+	}
+
+	public void listar() {
+		System.out.print(produtos);
 	}
 }

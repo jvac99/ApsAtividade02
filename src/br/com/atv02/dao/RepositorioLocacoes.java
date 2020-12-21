@@ -1,7 +1,9 @@
-package br.com.atv02.model;
+package br.com.atv02.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.atv02.model.Locacoes;
 
 public class RepositorioLocacoes {
 	List<Locacoes> locacoes = new ArrayList<Locacoes>();
