@@ -27,6 +27,8 @@ public class RepositorioProdutos {
 	}
 
 	public void listar() {
-		System.out.print(produtos);
+		for (Produto produto : produtos.values()) {
+			System.out.println(produto);
+		}
 	}
 }

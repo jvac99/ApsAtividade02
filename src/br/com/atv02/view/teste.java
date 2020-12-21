@@ -12,6 +12,6 @@ public class teste {
 		gerente.adicionarCliente(new Cliente("a", 1, "endereco", 14 ,'s'));
 		gerente.adicionarCliente(new Cliente("b", 2, "endereco", 2 ,'s'));
 		gerente.listarClientes();
+		gerente.procurarCliente(1);
 	}
-
 }

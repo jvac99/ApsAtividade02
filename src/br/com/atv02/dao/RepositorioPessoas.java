@@ -19,6 +19,7 @@ public class RepositorioPessoas {
 	}
 
 	public Pessoa buscar(int matricula) {
+		System.out.println(pessoas.get(matricula));
 		return pessoas.get(matricula);
 	}
 
@@ -27,6 +28,8 @@ public class RepositorioPessoas {
 	}
 
 	public void listar() {
-		System.out.print(pessoas);
-	}	
+		for (Pessoa pessoa : pessoas.values()) {
+			System.out.println(pessoa);
+		}
+	}
 }
