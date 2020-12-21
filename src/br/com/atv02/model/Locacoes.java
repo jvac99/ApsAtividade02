@@ -1,20 +1,17 @@
 package br.com.atv02.model;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Locacoes {
 	private String codigoProduto;
 	private int matriculaCliente;
-	private Date dataSaida;
-	private Date dataPrevistaEntrega;
+	private LocalDate dataSaida;
+	private LocalDate dataPrevistaEntrega;
 
 	public Locacoes() {
-		dataSaida = new Date();
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(dataSaida);
-		calendar.add(Calendar.DAY_OF_MONTH, 2);
-		dataPrevistaEntrega = calendar.getTime();
+		dataSaida = LocalDate.now();
+		dataPrevistaEntrega = dataSaida.plusDays(2);
 	}
 
 	public String getCodigoProduto() {
@@ -35,8 +32,9 @@ public class Locacoes {
 
 	@Override
 	public String toString() {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		return "Locacoes [codigoProduto=" + codigoProduto + ", matriculaCliente=" + matriculaCliente + ", dataSaida="
-				+ dataSaida + ", dataPrevistaEntrega=" + dataPrevistaEntrega + "]";
+				+ dataSaida.format(formatter) + ", dataPrevistaEntrega=" + dataPrevistaEntrega.format(formatter) + "]";
 	}
 	
 }

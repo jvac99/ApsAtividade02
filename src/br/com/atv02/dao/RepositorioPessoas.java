@@ -19,7 +19,6 @@ public class RepositorioPessoas {
 	}
 
 	public Pessoa buscar(int matricula) {
-		System.out.println(pessoas.get(matricula));
 		return pessoas.get(matricula);
 	}
 

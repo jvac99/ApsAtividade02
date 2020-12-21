@@ -4,6 +4,9 @@ import br.com.atv02.dao.Repositorios;
 
 public class Gerente extends Funcionario {
 	Repositorios repositorios = null;
+	Produto produto = null;
+	Cliente cliente = null;
+	OperadorDoSistema operadorDoSistema = null;
 
 	public Gerente() {
 
@@ -38,14 +41,17 @@ public class Gerente extends Funcionario {
 	}
 
 	public void procurarProduto(String codigo) {
-		repositorios.getRepositorioProdutos().buscar(codigo);
+		produto = repositorios.getRepositorioProdutos().buscar(codigo);
+		System.out.print(produto);
 	}
 
 	public void procurarCliente(int matricula) {
-		repositorios.getRepositorioPessoasCliente().buscar(matricula);
+		cliente = (Cliente) repositorios.getRepositorioPessoasCliente().buscar(matricula);
+		System.out.println(cliente);
 	}
 
 	public void procurarOperador(int matricula) {
-		repositorios.getRepositorioPessoasOperador().buscar(matricula);
+		operadorDoSistema = (OperadorDoSistema) repositorios.getRepositorioPessoasOperador().buscar(matricula);
+		System.out.println(operadorDoSistema);
 	}
 }
