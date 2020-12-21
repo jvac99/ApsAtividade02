@@ -3,18 +3,18 @@ package br.com.atv02.model;
 public class Gerente extends Funcionario {
 
 	public Gerente() {
-		
-	}
-
-	public void adicionarCliente() {
 
 	}
 
-	public void adicionarProduto() {
+	public void adicionarCliente(Cliente cliente) {
 
 	}
 
-	public void adicionarOperador() {
+	public void adicionarProduto(Produto produto) {
+
+	}
+
+	public void adicionarOperador(OperadorDoSistema operador) {
 
 	}
 

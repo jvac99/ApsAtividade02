@@ -1,11 +1,20 @@
 package br.com.atv02.model;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class Locacoes {
 	private String codigoProduto;
 	private int matriculaCliente;
+	private Date dataSaida;
+	private Date dataPrevistaEntrega;
 
 	public Locacoes() {
-		// TODO Auto-generated constructor stub
+		dataSaida = new Date();
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(dataSaida);
+		calendar.add(Calendar.DAY_OF_MONTH, 2);
+		dataPrevistaEntrega = calendar.getTime();
 	}
 
 	public String getCodigoProduto() {
@@ -24,4 +33,10 @@ public class Locacoes {
 		this.matriculaCliente = matriculaCliente;
 	}
 
+	@Override
+	public String toString() {
+		return "Locacoes [codigoProduto=" + codigoProduto + ", matriculaCliente=" + matriculaCliente + ", dataSaida="
+				+ dataSaida + ", dataPrevistaEntrega=" + dataPrevistaEntrega + "]";
+	}
+	
 }

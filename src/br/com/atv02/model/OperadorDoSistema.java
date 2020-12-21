@@ -11,7 +11,7 @@ public class OperadorDoSistema extends Funcionario {
 	}
 
 	public void fazerbaixaLocacao() {
-
+		
 	}
 
 	public void excluirLocacao() {
