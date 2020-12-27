@@ -9,12 +9,12 @@ public class RepositorioProdutos {
 	Map<String, Produto> produtos = new HashMap<String, Produto>();
 
 	public RepositorioProdutos() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public void adicionar(Produto produto) {
 		produtos.put(produto.getCodigo(), produto);
-		System.out.println(produtos);
+		System.out.println("Adicionado");
 	}
 
 	public void alterar(String codigo, Produto produto) {
@@ -31,7 +31,7 @@ public class RepositorioProdutos {
 
 	public void listar() {
 		for (Produto produto : produtos.values()) {
-			System.out.println(produto);
+			System.out.println("Código: " + produto.getCodigo() + " Titulo: " + produto.getTitulo() + " Gênero: " + produto.getGenero());
 		}
 	}
 }

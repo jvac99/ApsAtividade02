@@ -12,7 +12,8 @@ public class OperadorDoSistema extends Funcionario {
 
 	}
 
-	public OperadorDoSistema(Repositorios repositorios) {
+	public OperadorDoSistema(String nome, int matricula, String login, String senha, Repositorios repositorios) {
+		super(nome, matricula, login, senha);
 		this.repositorios = repositorios;
 	}
 

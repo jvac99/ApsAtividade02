@@ -28,7 +28,7 @@ public class RepositorioPessoas {
 
 	public void listar() {
 		for (Pessoa pessoa : pessoas.values()) {
-			System.out.println(pessoa);
+			System.out.println("Matricula" + pessoa.getMatricula() + " Nome: " + pessoa.getNome());
 		}
 	}
 }

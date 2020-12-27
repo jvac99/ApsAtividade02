@@ -5,11 +5,11 @@ public abstract class Musica extends Produto{
 	private int numFaixas;
 
 	public Musica() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Musica(String autor, int numFaixas) {
-		super();
+	public Musica(String codigo, String titulo, String genero, String autor, int numFaixas) {
+		super(codigo, titulo, genero);
 		this.autor = autor;
 		this.numFaixas = numFaixas;
 	}

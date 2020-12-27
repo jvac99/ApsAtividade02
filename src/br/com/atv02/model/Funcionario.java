@@ -4,11 +4,11 @@ public class Funcionario extends Pessoa {
 	String login, senha;
 
 	public Funcionario() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Funcionario(String login, String senha) {
-		super();
+	public Funcionario(String nome, int matricula, String login, String senha) {
+		super(nome, matricula);
 		this.login = login;
 		this.senha = senha;
 	}

@@ -12,7 +12,8 @@ public class Gerente extends Funcionario {
 
 	}
 
-	public Gerente(Repositorios repositorios) {
+	public Gerente(String nome, int matricula, String login, String senha, Repositorios repositorios) {
+		super(nome, matricula, login, senha);
 		this.repositorios = repositorios;
 	}
 

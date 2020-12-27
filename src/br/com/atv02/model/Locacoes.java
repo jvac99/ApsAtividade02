@@ -29,6 +29,14 @@ public class Locacoes {
 		return matriculaCliente;
 	}
 
+	public LocalDate getDataSaida(){
+		return dataSaida;
+	}
+
+	public LocalDate getDataPrevistaEntrega(){
+		return dataPrevistaEntrega;
+	}
+
 	public void setCodigoProduto(String codigoProduto) {
 		this.codigoProduto = codigoProduto;
 	}

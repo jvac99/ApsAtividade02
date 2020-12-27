@@ -4,11 +4,11 @@ public class LPs extends Musica {
 	private boolean raro;
 
 	public LPs() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public LPs(boolean raro) {
-		super();
+	public LPs(String codigo, String titulo, String genero, String autor, int numFaixas, boolean raro) {
+		super(codigo, titulo, genero, autor, numFaixas);
 		this.raro = raro;
 	}
 

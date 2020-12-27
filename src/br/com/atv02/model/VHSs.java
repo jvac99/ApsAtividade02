@@ -4,11 +4,11 @@ public class VHSs extends Filme {
 	private boolean cores;
 
 	public VHSs() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public VHSs(boolean cores) {
-		super();
+	public VHSs(String codigo, String titulo, String genero, int anoLancamento, int duracao, boolean cores) {
+		super(codigo, titulo, genero, anoLancamento, duracao);
 		this.cores = cores;
 	}
 

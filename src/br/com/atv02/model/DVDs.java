@@ -4,11 +4,11 @@ public class DVDs extends Filme {
 	private boolean arranhado;
 
 	public DVDs() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public DVDs(boolean arranhado) {
-		super();
+	public DVDs(String codigo, String titulo, String genero, int anoLancamento, int duracao, boolean arranhado) {
+		super(codigo, titulo, genero, anoLancamento, duracao);
 		this.arranhado = arranhado;
 	}
 

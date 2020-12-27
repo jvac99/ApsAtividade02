@@ -4,11 +4,11 @@ public abstract class Filme extends Produto{
 	private int anoLancamento, duracao;
 
 	public Filme() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Filme(int anoLancamento, int duracao) {
-		super();
+	public Filme(String codigo, String titulo, String genero, int anoLancamento, int duracao) {
+		super(codigo, titulo, genero);
 		this.anoLancamento = anoLancamento;
 		this.duracao = duracao;
 	}

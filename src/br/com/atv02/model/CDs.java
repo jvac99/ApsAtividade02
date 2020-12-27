@@ -4,11 +4,11 @@ public class CDs extends Musica {
 	private boolean arranhado, duplo;
 
 	public CDs() {
-		// TODO Auto-generated constructor stub
+	
 	}
 
-	public CDs(boolean arranhado, boolean duplo) {
-		super();
+	public CDs(String codigo, String titulo, String genero, String autor, int numFaixas, boolean arranhado, boolean duplo) {
+		super(codigo, titulo, genero, autor, numFaixas);
 		this.arranhado = arranhado;
 		this.duplo = duplo;
 	}

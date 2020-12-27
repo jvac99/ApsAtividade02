@@ -5,7 +5,7 @@ public abstract class Pessoa {
 	int matricula;
 
 	public Pessoa() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Pessoa(String nome, int matricula) {

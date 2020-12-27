@@ -6,7 +6,7 @@ public class Cliente extends Pessoa {
 	char sexo;
 
 	public Cliente() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public Cliente(String endereco, int idade, char sexo) {
