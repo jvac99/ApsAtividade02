@@ -4,7 +4,7 @@ public class DVDs extends Filme {
 	private boolean arranhado;
 
 	public DVDs() {
-		
+
 	}
 
 	public DVDs(String codigo, String titulo, String genero, int anoLancamento, int duracao, boolean arranhado) {
@@ -19,14 +19,16 @@ public class DVDs extends Filme {
 	public void setArranhado(boolean arranhado) {
 		this.arranhado = arranhado;
 	}
-	
-	public double calcularDiaria(){
+
+	public double calcularDiaria() {
 		return 10;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "DVDs [arranhado=" + arranhado + "]";
+		return "DVDs [arranhado=" + arranhado + ", getAnoLancamento()=" + getAnoLancamento() + ", getDuracao()="
+				+ getDuracao() + ", toString()=" + super.toString() + ", getCodigo()=" + getCodigo() + ", getTitulo()="
+				+ getTitulo() + ", getGenero()=" + getGenero() + ", isLocado()=" + isLocado() + "]";
 	}
-
+	
 }

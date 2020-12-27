@@ -1,102 +1,191 @@
 package br.com.atv02.view;
+
 import java.util.Scanner;
+
 import br.com.atv02.dao.Repositorios;
-import br.com.atv02.model.Produto;
-import br.com.atv02.model.DVDs;
-import br.com.atv02.model.VHSs;
 import br.com.atv02.model.Blurays;
-import br.com.atv02.model.LPs;
-import br.com.atv02.model.OperadorDoSistema;
 import br.com.atv02.model.CDs;
 import br.com.atv02.model.Cliente;
+import br.com.atv02.model.DVDs;
+import br.com.atv02.model.Gerente;
+import br.com.atv02.model.LPs;
+import br.com.atv02.model.OperadorDoSistema;
+import br.com.atv02.model.Produto;
+import br.com.atv02.model.VHSs;
 
-public class MenuGerente{
-    Scanner scanner = new Scanner(System.in);
-    Repositorios rp = null;
+public class MenuGerente {
+	Scanner scanner = new Scanner(System.in);
+	Repositorios rp = null;
 
-    MenuGerente(Repositorios rp){
-        this.rp = rp;
-    }    
-    public void menu(){
-        while(true){
-            System.out.println("****OlÃ¡ Gerente*****");
-            System.out.println("1 â€“ Cadastrar Produto");
-            System.out.println("2 â€“ Cadastrar Cliente");
-            System.out.println("3 â€“ Cadastrar Operador");
-            System.out.println("4 â€“ Listar Produtos");
-            System.out.println("5 â€“ Listar Clientes");
-            System.out.println("6 â€“ Listar Operadores");
-            System.out.println("7 â€“ Procurar Produto");
-            System.out.println("8 â€“ Procurar Cliente");
-            System.out.println("9 â€“ Procurar Operador");
-            System.out.println("10 â€“ Sair");
+	MenuGerente(Repositorios rp) {
+		this.rp = rp;
+	}
 
-            try{
-                int idOP = Integer.parseInt(scanner.nextLine());
-                String line;
-                String cmd[];
-                if(idOP == 1){
-                    line = scanner.nextLine();
-                    cmd = line.split(" ");
-                    Produto prod = null;
-                    if(cmd[0].equals("DVD")){
-                        prod = new DVDs(cmd[1], cmd[2], cmd[3], Integer.parseInt(cmd[4]), Integer.parseInt(cmd[5]), false);
-                    }else if(cmd[0].equals("VHS")){
-                        boolean colorido = false;
-                        if(cmd[6].equals("sim")){
-                            colorido = true;
-                        }
-                        prod = new VHSs(cmd[1], cmd[2], cmd[3], Integer.parseInt(cmd[4]), Integer.parseInt(cmd[5]), colorido);
-                    }else if(cmd[0].equals("Bluray")){
-                        prod = new Blurays(cmd[1], cmd[2], cmd[3], Integer.parseInt(cmd[4]), Integer.parseInt(cmd[5]), cmd[6], cmd[7]);
-                    }else if(cmd[0].equals("LP")){
-                        boolean raro = false;
-                        if(cmd[6].equals("sim")){
-                            raro = true;
-                        }
-                        prod = new LPs(cmd[1], cmd[2], cmd[3], cmd[4], Integer.parseInt(cmd[5]), raro);
-                    }else if(cmd[0].equals("CD")){
-                        boolean arranhado = false, duplo = false;
-                        if(cmd[6].equals("sim")){
-                            arranhado = true;
-                        }
-                        if(cmd[7].equals("sim")){
-                            duplo = true;
-                        }
-                        prod = new CDs(cmd[1], cmd[2], cmd[3], cmd[4], Integer.parseInt(cmd[5]), arranhado, duplo);
-                    }
-                    rp.getRepositorioProdutos().adicionar(prod);
-                }else if(idOP == 2){
-                    line = scanner.nextLine();
-                    cmd = line.split(" ");
-                    rp.getRepositorioPessoasCliente().adicionar(new Cliente(cmd[0], Integer.parseInt(cmd[1]), cmd[2], Integer.parseInt(cmd[3]), cmd[4].charAt(0)));
-                }else if(idOP == 3){
-                    line = scanner.nextLine();
-                    cmd = line.split(" ");
-                    rp.getRepositorioPessoasOperador().adicionar(new OperadorDoSistema(cmd[0], Integer.parseInt(cmd[1]), cmd[2], cmd[3], rp));
-                }else if(idOP == 4){
-                    rp.getRepositorioProdutos().listar();
-                }else if(idOP == 5){
-                    rp.getRepositorioPessoasCliente().listar();
-                }else if(idOP == 6){
-                    rp.getRepositorioPessoasOperador().listar();
-                }else if(idOP == 7){
-                    line = scanner.nextLine();
-                    rp.getRepositorioProdutos().buscar(line);
-                }else if(idOP == 8){
-                    line = scanner.nextLine();
-                    rp.getRepositorioPessoasCliente().buscar(Integer.parseInt(line));
-                }else if(idOP == 9){
-                    line = scanner.nextLine();
-                    rp.getRepositorioPessoasOperador().buscar(Integer.parseInt(line));
-                }else if(idOP == 10){
-                    System.exit(0);
-                }else{
-                    System.out.println("OperaÃ§Ã£o invÃ¡lida");
-                }
-            }catch(NumberFormatException exception){
-                System.out.println("Formato invÃ¡lido");
-            }
-        }
-    }
+	public void menu() {
+		Gerente gerente = rp.getGerente();
+		while (true) {
+			System.out.println("****Olá " + gerente.getNome() + "*****");
+			System.out.println("1 - Cadastrar Produto");
+			System.out.println("2 - Cadastrar Cliente");
+			System.out.println("3 - Cadastrar Operador");
+			System.out.println("4 - Listar Produtos");
+			System.out.println("5 - Listar Clientes");
+			System.out.println("6 - Listar Operadores");
+			System.out.println("7 - Procurar Produto");
+			System.out.println("8 - Procurar Cliente");
+			System.out.println("9 - Procurar Operador");
+			System.out.println("10 - Voltar a tela de login");
+			System.out.println("11 - Sair");
+
+			try {
+				int idOP = scanner.nextInt();
+				if (idOP == 1) {
+					System.out.println("Qual o produto?");
+					System.out.println("1 DVD");
+					System.out.println("2 VHS");
+					System.out.println("3 Bluray");
+					System.out.println("4 CD");
+					System.out.println("5 LP");
+					int opcPro = scanner.nextInt();
+					Produto prod = null;
+					String codigo, titulo, genero, idioma1, idioma2 = null, autor;
+					int arranhado, cores, duplo, numFaixas, raro;
+					int anoLancamento, duracao;
+					if (opcPro == 1) {
+						System.out.println("Digite o código: ");
+						codigo = scanner.next();
+						System.out.println("Digite o título: ");
+						titulo = scanner.next();
+						System.out.println("Digite o gênero: ");
+						genero = scanner.next();
+						System.out.println("Digite o ano de lançamento: ");
+						anoLancamento = scanner.nextInt();
+						System.out.println("Digite a duração: ");
+						duracao = scanner.nextInt();
+						System.out.println("Digite 1 se está arranhado, 0 caso não: ");
+						arranhado = scanner.nextInt();
+						prod = new DVDs(codigo, titulo, genero, anoLancamento, duracao, arranhado == 1);
+					} else if (opcPro == 2) {
+						System.out.println("Digite o código: ");
+						codigo = scanner.next();
+						System.out.println("Digite o título: ");
+						titulo = scanner.next();
+						System.out.println("Digite o gênero: ");
+						genero = scanner.next();
+						System.out.println("Digite o ano de lançamento: ");
+						anoLancamento = scanner.nextInt();
+						System.out.println("Digite a duração: ");
+						duracao = scanner.nextInt();
+						System.out.println("Digite 1 se é colorido, 0 caso não: ");
+						cores = scanner.nextInt();
+						prod = new VHSs(codigo, titulo, genero, anoLancamento, duracao, cores == 1);
+					} else if (opcPro == 3) {
+						System.out.println("Digite o código: ");
+						codigo = scanner.next();
+						System.out.println("Digite o título: ");
+						titulo = scanner.next();
+						System.out.println("Digite o gênero: ");
+						genero = scanner.next();
+						System.out.println("Digite o ano de lançamento: ");
+						anoLancamento = scanner.nextInt();
+						System.out.println("Digite a duração: ");
+						duracao = scanner.nextInt();
+						System.out.println("Digite o primeiro idioma: ");
+						idioma1 = scanner.next();
+						System.out.println("Se tem um segundo idioma, digite 1, caso não 0: ");
+						int i = scanner.nextInt();
+						if (i == 1) {
+							System.out.println("Digite o segundo idioma: ");
+							idioma2 = scanner.next();
+						}
+						prod = new Blurays(codigo, titulo, genero, anoLancamento, duracao, idioma1, idioma2);
+					} else if (opcPro == 4) {
+						System.out.println("Digite o código: ");
+						codigo = scanner.next();
+						System.out.println("Digite o título: ");
+						titulo = scanner.next();
+						System.out.println("Digite o gênero: ");
+						genero = scanner.next();
+						System.out.println("Digite o autor: ");
+						autor = scanner.next();
+						System.out.println("Digite o número de faixas: ");
+						numFaixas = scanner.nextInt();
+						System.out.println("Digite 1 se está arranhado, 0 caso não: ");
+						arranhado = scanner.nextInt();
+						System.out.println("Digite 1 se ele é duplo, 0 caso não: ");
+						duplo = scanner.nextInt();
+						prod = new CDs(codigo, titulo, genero, autor, numFaixas, arranhado == 1, duplo == 1);
+					} else if (opcPro == 5) {
+						System.out.println("Digite o código: ");
+						codigo = scanner.next();
+						System.out.println("Digite o título: ");
+						titulo = scanner.next();
+						System.out.println("Digite o gênero: ");
+						genero = scanner.next();
+						System.out.println("Digite o autor: ");
+						autor = scanner.next();
+						System.out.println("Digite o número de faixas: ");
+						numFaixas = scanner.nextInt();
+						System.out.println("Digite 1 se está arranhado, 0 caso não: ");
+						arranhado = scanner.nextInt();
+						System.out.println("Digite 1 se ele é duplo, 0 caso não: ");
+						duplo = scanner.nextInt();
+						System.out.println("Digite 1 se ele é raro, 0 caso não: ");
+						raro = scanner.nextInt();
+						prod = new LPs(codigo, titulo, genero, autor, numFaixas, raro == 1);
+					}
+					gerente.adicionarProduto(prod);
+				} else if (idOP == 2) {
+					System.out.println("Digite o nome do cliente: ");
+					String nome = scanner.next();
+					System.out.println("Digite a matricula: ");
+					int matricula = scanner.nextInt();
+					System.out.println("Digite o endereço do cliente: ");
+					String endereco = scanner.next();
+					System.out.println("Digite a idade do cliente: ");
+					int idade = scanner.nextInt();
+					System.out.println("Digite o sexo do cliente: h = homem, m = mulher ou o = outro");
+					String sexo = scanner.next();
+					gerente.adicionarCliente(new Cliente(nome, matricula, endereco, idade, sexo.charAt(0)));
+				} else if (idOP == 3) {
+					System.out.println("Digite o nome do operador: ");
+					String nome = scanner.next();
+					System.out.println("Digite a matricula: ");
+					int matricula = scanner.nextInt();
+					System.out.println("Digite o login do operador: ");
+					String login = scanner.next();
+					System.out.println("Digite a senha do operador: ");
+					String senha = scanner.next();
+					gerente.adicionarOperador(new OperadorDoSistema(nome, matricula, login, senha, rp));
+				} else if (idOP == 4) {
+					rp.getRepositorioProdutos().listar();
+				} else if (idOP == 5) {
+					rp.getRepositorioPessoasCliente().listar();
+				} else if (idOP == 6) {
+					rp.getRepositorioPessoasOperador().listar();
+				} else if (idOP == 7) {
+					System.out.println("Digite o código: ");
+					String codigo = scanner.next();
+					gerente.procurarProduto(codigo);
+				} else if (idOP == 8) {
+					System.out.println("Digite a matricula: ");
+					int matricula = scanner.nextInt();
+					gerente.procurarCliente(matricula);
+				} else if (idOP == 9) {
+					System.out.println("Digite a matricula: ");
+					int matricula = scanner.nextInt();
+					gerente.procurarOperador(matricula);
+				} else if (idOP == 10) {
+					Interface i = new Interface();
+					i.tela1(rp);
+				} else if (idOP == 11) {
+					System.exit(0);
+				} else {
+					System.out.println("Operação inválida");
+				}
+			} catch (NumberFormatException exception) {
+				System.out.println("Formato inválido" + exception);
+			}
+		}
+	}
 }

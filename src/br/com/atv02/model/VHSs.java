@@ -23,10 +23,15 @@ public class VHSs extends Filme {
 	public double calcularDiaria(){
 		return 5;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "VHSs [cores=" + cores + "]";
+		return "VHSs [cores=" + cores + ", getAnoLancamento()=" + getAnoLancamento() + ", getDuracao()=" + getDuracao()
+				+ ", toString()=" + super.toString() + ", getCodigo()=" + getCodigo() + ", getTitulo()=" + getTitulo()
+				+ ", getGenero()=" + getGenero() + ", isLocado()=" + isLocado() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + "]";
 	}
+	
+	
 
 }

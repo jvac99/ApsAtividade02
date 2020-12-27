@@ -1,10 +1,10 @@
 package br.com.atv02.model;
 
-public abstract class Filme extends Produto{
+public abstract class Filme extends Produto {
 	private int anoLancamento, duracao;
 
 	public Filme() {
-		
+
 	}
 
 	public Filme(String codigo, String titulo, String genero, int anoLancamento, int duracao) {
@@ -31,7 +31,10 @@ public abstract class Filme extends Produto{
 
 	@Override
 	public String toString() {
-		return "Filme [anoLancamento=" + anoLancamento + ", duracao=" + duracao + "]";
+		return "Filme [anoLancamento=" + anoLancamento + ", duracao=" + duracao + ", getCodigo()=" + getCodigo()
+				+ ", getTitulo()=" + getTitulo() + ", getGenero()=" + getGenero() + ", isLocado()=" + isLocado()
+				+ ", calcularDiaria()=" + calcularDiaria() + ", toString()=" + super.toString() + ", getClass()="
+				+ getClass() + ", hashCode()=" + hashCode() + "]";
 	}
 
 }

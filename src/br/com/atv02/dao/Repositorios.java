@@ -1,18 +1,22 @@
 package br.com.atv02.dao;
 
+import br.com.atv02.model.Gerente;
+import br.com.atv02.model.OperadorDoSistema;
+
 public class Repositorios {
 	private RepositorioPessoas repositorioPessoasCliente = new RepositorioPessoas();
-	private RepositorioPessoas repositorioPessoasGerente = new RepositorioPessoas();
 	private RepositorioPessoas repositorioPessoasOperador = new RepositorioPessoas();
 	private RepositorioLocacoes repositorioLocacoes = new RepositorioLocacoes();
 	private RepositorioProdutos repositorioProdutos = new RepositorioProdutos();
+	private Gerente gerente = null;
+	private OperadorDoSistema operadorDoSistema = null;
+
+	public Repositorios() {
+		setGerente(new Gerente("Neo", 1, "admin", "admin", this));
+	}
 
 	public RepositorioPessoas getRepositorioPessoasCliente() {
 		return repositorioPessoasCliente;
-	}
-
-	public RepositorioPessoas getRepositorioPessoasGerente() {
-		return repositorioPessoasGerente;
 	}
 
 	public RepositorioPessoas getRepositorioPessoasOperador() {
@@ -31,10 +35,6 @@ public class Repositorios {
 		this.repositorioPessoasCliente = repositorioPessoasCliente;
 	}
 
-	public void setRepositorioPessoasGerente(RepositorioPessoas repositorioPessoasGerente) {
-		this.repositorioPessoasGerente = repositorioPessoasGerente;
-	}
-
 	public void setRepositorioPessoasOperador(RepositorioPessoas repositorioPessoasOperador) {
 		this.repositorioPessoasOperador = repositorioPessoasOperador;
 	}
@@ -45,5 +45,21 @@ public class Repositorios {
 
 	public void setRepositorioProdutos(RepositorioProdutos repositorioProdutos) {
 		this.repositorioProdutos = repositorioProdutos;
+	}
+
+	public Gerente getGerente() {
+		return gerente;
+	}
+
+	public void setGerente(Gerente gerente) {
+		this.gerente = gerente;
+	}
+
+	public OperadorDoSistema getOperadorDoSistema() {
+		return operadorDoSistema;
+	}
+
+	public void setOperadorDoSistema(OperadorDoSistema operadorDoSistema) {
+		this.operadorDoSistema = operadorDoSistema;
 	}
 }

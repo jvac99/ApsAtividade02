@@ -18,11 +18,16 @@ public class OperadorDoSistema extends Funcionario {
 	}
 
 	public void fazerLocacao(int matriculaCliente, String codigoProduto) {
-		Locacoes locacoes = new Locacoes(codigoProduto, matricula);
-		repositorios.getRepositorioLocacoes().adicionar(locacoes);
 		produto = repositorios.getRepositorioProdutos().buscar(codigoProduto);
-		produto.setLocado(true);
-		repositorios.getRepositorioProdutos().alterar(codigoProduto, produto);
+		if (!produto.isLocado()) {
+			produto.setLocado(true);
+			Locacoes locacoes = new Locacoes(codigoProduto, matricula);
+			repositorios.getRepositorioLocacoes().adicionar(locacoes);
+			repositorios.getRepositorioProdutos().alterar(codigoProduto, produto);
+		} else {
+			System.out.println("Produto já está locado");
+		}
+
 	}
 
 	public void fazerbaixaLocacao(int matriculaCliente, String codigoProduto) {
@@ -31,11 +36,14 @@ public class OperadorDoSistema extends Funcionario {
 		Double diaria = produto.calcularDiaria();
 		produto.setLocado(false);
 		repositorios.getRepositorioProdutos().alterar(codigoProduto, produto);
-		System.out.println(diaria);
+		System.out.println("Diária: " + diaria);
 	}
 
 	public void excluirLocacao(int matriculaCliente, String codigoProduto) {
 		repositorios.getRepositorioLocacoes().remover(matriculaCliente, codigoProduto);
+		produto = repositorios.getRepositorioProdutos().buscar(codigoProduto);
+		produto.setLocado(false);
+		System.out.println("Locação excluida.");
 	}
 
 	public void procurarProduto(String codigo) {

@@ -32,10 +32,15 @@ public class CDs extends Musica {
 	public double calcularDiaria(){
 		return 10;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "CDs [arranhado=" + arranhado + ", duplo=" + duplo + "]";
+		return "CDs [arranhado=" + arranhado + ", duplo=" + duplo + ", getAutor()=" + getAutor() + ", getNumFaixas()="
+				+ getNumFaixas() + ", toString()=" + super.toString() + ", getCodigo()=" + getCodigo()
+				+ ", getTitulo()=" + getTitulo() + ", getGenero()=" + getGenero() + ", isLocado()=" + isLocado()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
+	
+	
 
 }

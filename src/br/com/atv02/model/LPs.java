@@ -4,7 +4,7 @@ public class LPs extends Musica {
 	private boolean raro;
 
 	public LPs() {
-		
+
 	}
 
 	public LPs(String codigo, String titulo, String genero, String autor, int numFaixas, boolean raro) {
@@ -20,13 +20,16 @@ public class LPs extends Musica {
 		this.raro = raro;
 	}
 
-	public double calcularDiaria(){
+	public double calcularDiaria() {
 		return 20;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "LPs [raro=" + raro + "]";
+		return "LPs [raro=" + raro + ", getAutor()=" + getAutor() + ", getNumFaixas()=" + getNumFaixas()
+				+ ", toString()=" + super.toString() + ", getCodigo()=" + getCodigo() + ", getTitulo()=" + getTitulo()
+				+ ", getGenero()=" + getGenero() + ", isLocado()=" + isLocado() + ", getClass()=" + getClass()
+				+ ", hashCode()=" + hashCode() + "]";
 	}
 
 }

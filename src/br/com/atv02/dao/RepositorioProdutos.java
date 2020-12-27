@@ -9,12 +9,14 @@ public class RepositorioProdutos {
 	Map<String, Produto> produtos = new HashMap<String, Produto>();
 
 	public RepositorioProdutos() {
-		
+
 	}
 
 	public void adicionar(Produto produto) {
 		produtos.put(produto.getCodigo(), produto);
 		System.out.println("Adicionado");
+		System.out.println("Código: " + produto.getCodigo() + " Titulo: " + produto.getTitulo() + " Gênero: "
+				+ produto.getGenero());
 	}
 
 	public void alterar(String codigo, Produto produto) {
@@ -31,7 +33,8 @@ public class RepositorioProdutos {
 
 	public void listar() {
 		for (Produto produto : produtos.values()) {
-			System.out.println("CÃ³digo: " + produto.getCodigo() + " Titulo: " + produto.getTitulo() + " GÃªnero: " + produto.getGenero());
+			System.out.println("Código: " + produto.getCodigo() + " Titulo: " + produto.getTitulo() + " Gênero: "
+					+ produto.getGenero());
 		}
 	}
 }

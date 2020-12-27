@@ -4,15 +4,17 @@ import java.util.Arrays;
 
 public class Blurays extends Filme {
 	private String idiomas[] = new String[2];
-           	
+
 	public Blurays() {
-		
+
 	}
 
-	public Blurays(String codigo, String titulo, String genero, int anoLancamento, int duracao, String idioma1, String idioma2) {
+	public Blurays(String codigo, String titulo, String genero, int anoLancamento, int duracao, String idioma1,
+			String idioma2) {
 		super(codigo, titulo, genero, anoLancamento, duracao);
 		this.idiomas[0] = idioma1;
-		this.idiomas[0] = idioma2;
+		if (idioma2 != null)
+			this.idiomas[1] = idioma2;
 	}
 
 	public String[] getIdiomas() {
@@ -22,14 +24,17 @@ public class Blurays extends Filme {
 	public void setIdiomas(String[] idiomas) {
 		this.idiomas = idiomas;
 	}
-	
-	public double calcularDiaria(){
+
+	public double calcularDiaria() {
 		return 15;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Blurays [idiomas=" + Arrays.toString(idiomas) + "]";
+		return "Blurays [idiomas=" + Arrays.toString(idiomas) + ", getAnoLancamento()=" + getAnoLancamento()
+				+ ", getDuracao()=" + getDuracao() + ", toString()=" + super.toString() + ", getCodigo()=" + getCodigo()
+				+ ", getTitulo()=" + getTitulo() + ", getGenero()=" + getGenero() + ", isLocado()=" + isLocado()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + "]";
 	}
 
 }

@@ -6,7 +6,7 @@ public class Cliente extends Pessoa {
 	char sexo;
 
 	public Cliente() {
-		
+
 	}
 
 	public Cliente(String endereco, int idade, char sexo) {
@@ -49,7 +49,7 @@ public class Cliente extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Cliente [endereco=" + endereco + ", idade=" + idade + ", sexo=" + sexo + ", nome=" + nome
+		return "Cliente [nome =" + nome + ", idade=" + idade + ", sexo=" + sexo + ", endereço=" + endereco
 				+ ", matricula=" + matricula + "]";
 	}
 
