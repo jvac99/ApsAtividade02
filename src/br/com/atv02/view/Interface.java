@@ -34,10 +34,10 @@ class Options {
 						break;
 					}
 				} else {
-					System.out.println("N˙mero inv·lido.");
+					System.out.println("N√∫mero inv√°lido.");
 				}
 			} catch (NumberFormatException exception) {
-				System.out.println("Entrada inv·lida.");
+				System.out.println("Entrada inv√°lida.");
 			}
 		}
 	}
@@ -51,7 +51,7 @@ class Options {
 			}
 			cont--;
 			String user, senha;
-			System.out.println("****FaÁa seu Login****");
+			System.out.println("****Fa√ßa seu Login****");
 			System.out.print("Digite seu login: ");
 			user = scanner.nextLine();
 			System.out.print("Digite sua senha: ");
@@ -62,12 +62,12 @@ class Options {
 				if (user.equals(gerente.getLogin()) && senha.equals(gerente.getSenha())) {
 					break;
 				} else {
-					System.out.println("Usu·rio ou senha incorretos");
+					System.out.println("Usu√°rio ou senha incorretos");
 				}
 			} else {
 				List<Pessoa> p = repositorios.getRepositorioPessoasOperador().listarTodos();
 				if (p == null) {
-					System.out.println("N„o existe nenhum operador de sistemas.");
+					System.out.println("N√£o existe nenhum operador de sistemas.");
 					selectPerfil();
 				} else {
 					OperadorDoSistema ops = null;
@@ -78,7 +78,7 @@ class Options {
 							return perfil;
 						}
 					}
-					System.out.println("Usu·rio ou senha incorretos");
+					System.out.println("Usu√°rio ou senha incorretos");
 				}
 			}
 		}

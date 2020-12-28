@@ -24,7 +24,7 @@ public class MenuGerente {
 	public void menu() {
 		Gerente gerente = rp.getGerente();
 		while (true) {
-			System.out.println("****Ol· " + gerente.getNome() + "*****");
+			System.out.println("****Ol√° " + gerente.getNome() + "*****");
 			System.out.println("1 - Cadastrar Produto");
 			System.out.println("2 - Cadastrar Cliente");
 			System.out.println("3 - Cadastrar Operador");
@@ -52,47 +52,47 @@ public class MenuGerente {
 					int arranhado, cores, duplo, numFaixas, raro;
 					int anoLancamento, duracao;
 					if (opcPro == 1) {
-						System.out.println("Digite o cÛdigo: ");
+						System.out.println("Digite o c√≥digo: ");
 						codigo = scanner.next();
-						System.out.println("Digite o tÌtulo: ");
+						System.out.println("Digite o t√≠tulo: ");
 						titulo = scanner.next();
-						System.out.println("Digite o gÍnero: ");
+						System.out.println("Digite o g√™nero: ");
 						genero = scanner.next();
-						System.out.println("Digite o ano de lanÁamento: ");
+						System.out.println("Digite o ano de lan√ßamento: ");
 						anoLancamento = scanner.nextInt();
-						System.out.println("Digite a duraÁ„o: ");
+						System.out.println("Digite a dura√ß√£o: ");
 						duracao = scanner.nextInt();
-						System.out.println("Digite 1 se est· arranhado, 0 caso n„o: ");
+						System.out.println("Digite 1 se est√° arranhado, 0 caso n√£o: ");
 						arranhado = scanner.nextInt();
 						prod = new DVDs(codigo, titulo, genero, anoLancamento, duracao, arranhado == 1);
 					} else if (opcPro == 2) {
-						System.out.println("Digite o cÛdigo: ");
+						System.out.println("Digite o c√≥digo: ");
 						codigo = scanner.next();
-						System.out.println("Digite o tÌtulo: ");
+						System.out.println("Digite o t√≠tulo: ");
 						titulo = scanner.next();
-						System.out.println("Digite o gÍnero: ");
+						System.out.println("Digite o g√™nero: ");
 						genero = scanner.next();
-						System.out.println("Digite o ano de lanÁamento: ");
+						System.out.println("Digite o ano de lan√ßamento: ");
 						anoLancamento = scanner.nextInt();
-						System.out.println("Digite a duraÁ„o: ");
+						System.out.println("Digite a dura√ß√£o: ");
 						duracao = scanner.nextInt();
-						System.out.println("Digite 1 se È colorido, 0 caso n„o: ");
+						System.out.println("Digite 1 se √© colorido, 0 caso n√£o: ");
 						cores = scanner.nextInt();
 						prod = new VHSs(codigo, titulo, genero, anoLancamento, duracao, cores == 1);
 					} else if (opcPro == 3) {
-						System.out.println("Digite o cÛdigo: ");
+						System.out.println("Digite o c√≥digo: ");
 						codigo = scanner.next();
-						System.out.println("Digite o tÌtulo: ");
+						System.out.println("Digite o t√≠tulo: ");
 						titulo = scanner.next();
-						System.out.println("Digite o gÍnero: ");
+						System.out.println("Digite o g√™nero: ");
 						genero = scanner.next();
-						System.out.println("Digite o ano de lanÁamento: ");
+						System.out.println("Digite o ano de lan√ßaamento: ");
 						anoLancamento = scanner.nextInt();
-						System.out.println("Digite a duraÁ„o: ");
+						System.out.println("Digite a dura√ß√£o: ");
 						duracao = scanner.nextInt();
 						System.out.println("Digite o primeiro idioma: ");
 						idioma1 = scanner.next();
-						System.out.println("Se tem um segundo idioma, digite 1, caso n„o 0: ");
+						System.out.println("Se tem um segundo idioma, digite 1, caso n√£o 0: ");
 						int i = scanner.nextInt();
 						if (i == 1) {
 							System.out.println("Digite o segundo idioma: ");
@@ -100,37 +100,37 @@ public class MenuGerente {
 						}
 						prod = new Blurays(codigo, titulo, genero, anoLancamento, duracao, idioma1, idioma2);
 					} else if (opcPro == 4) {
-						System.out.println("Digite o cÛdigo: ");
+						System.out.println("Digite o c√≥digo: ");
 						codigo = scanner.next();
-						System.out.println("Digite o tÌtulo: ");
+						System.out.println("Digite o t√≠tulo: ");
 						titulo = scanner.next();
-						System.out.println("Digite o gÍnero: ");
+						System.out.println("Digite o g√™nero: ");
 						genero = scanner.next();
 						System.out.println("Digite o autor: ");
 						autor = scanner.next();
-						System.out.println("Digite o n˙mero de faixas: ");
+						System.out.println("Digite o n√∫mero de faixas: ");
 						numFaixas = scanner.nextInt();
-						System.out.println("Digite 1 se est· arranhado, 0 caso n„o: ");
+						System.out.println("Digite 1 se est√° arranhado, 0 caso n√£o: ");
 						arranhado = scanner.nextInt();
-						System.out.println("Digite 1 se ele È duplo, 0 caso n„o: ");
+						System.out.println("Digite 1 se ele √© duplo, 0 caso n√£o: ");
 						duplo = scanner.nextInt();
 						prod = new CDs(codigo, titulo, genero, autor, numFaixas, arranhado == 1, duplo == 1);
 					} else if (opcPro == 5) {
-						System.out.println("Digite o cÛdigo: ");
+						System.out.println("Digite o c√≥digo: ");
 						codigo = scanner.next();
-						System.out.println("Digite o tÌtulo: ");
+						System.out.println("Digite o t√≠tulo: ");
 						titulo = scanner.next();
-						System.out.println("Digite o gÍnero: ");
+						System.out.println("Digite o g√™nero: ");
 						genero = scanner.next();
 						System.out.println("Digite o autor: ");
 						autor = scanner.next();
-						System.out.println("Digite o n˙mero de faixas: ");
+						System.out.println("Digite o n√∫mero de faixas: ");
 						numFaixas = scanner.nextInt();
-						System.out.println("Digite 1 se est· arranhado, 0 caso n„o: ");
+						System.out.println("Digite 1 se est√° arranhado, 0 caso n√£o: ");
 						arranhado = scanner.nextInt();
-						System.out.println("Digite 1 se ele È duplo, 0 caso n„o: ");
+						System.out.println("Digite 1 se ele √© duplo, 0 caso n√£o: ");
 						duplo = scanner.nextInt();
-						System.out.println("Digite 1 se ele È raro, 0 caso n„o: ");
+						System.out.println("Digite 1 se ele √© raro, 0 caso n√£o: ");
 						raro = scanner.nextInt();
 						prod = new LPs(codigo, titulo, genero, autor, numFaixas, raro == 1);
 					}
@@ -140,7 +140,7 @@ public class MenuGerente {
 					String nome = scanner.next();
 					System.out.println("Digite a matricula: ");
 					int matricula = scanner.nextInt();
-					System.out.println("Digite o endereÁo do cliente: ");
+					System.out.println("Digite o endere√ßo do cliente: ");
 					String endereco = scanner.next();
 					System.out.println("Digite a idade do cliente: ");
 					int idade = scanner.nextInt();
@@ -158,13 +158,13 @@ public class MenuGerente {
 					String senha = scanner.next();
 					gerente.adicionarOperador(new OperadorDoSistema(nome, matricula, login, senha, rp));
 				} else if (idOP == 4) {
-					rp.getRepositorioProdutos().listar();
+					gerente.listarProdutos();
 				} else if (idOP == 5) {
-					rp.getRepositorioPessoasCliente().listar();
+					gerente.listarClientes();
 				} else if (idOP == 6) {
-					rp.getRepositorioPessoasOperador().listar();
+					gerente.listarOperadores();
 				} else if (idOP == 7) {
-					System.out.println("Digite o cÛdigo: ");
+					System.out.println("Digite o c√≥digo: ");
 					String codigo = scanner.next();
 					gerente.procurarProduto(codigo);
 				} else if (idOP == 8) {
@@ -181,10 +181,10 @@ public class MenuGerente {
 				} else if (idOP == 11) {
 					System.exit(0);
 				} else {
-					System.out.println("OperaÁ„o inv·lida");
+					System.out.println("Opera√ß√£o inv√°lida");
 				}
 			} catch (NumberFormatException exception) {
-				System.out.println("Formato inv·lido" + exception);
+				System.out.println("Formato inv√°lido" + exception);
 			}
 		}
 	}

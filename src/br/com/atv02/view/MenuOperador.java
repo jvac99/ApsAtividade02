@@ -17,10 +17,10 @@ public class MenuOperador {
 	public void menu() {
 		ops = rp.getOperadorDoSistema();
 		while (true) {
-			System.out.println("****Ol· " + ops.getNome() + "****");
-			System.out.println("1 - Fazer locaÁ„o");
-			System.out.println("2 - Dar baixa em locaÁ„o");
-			System.out.println("3 - Excluir locaÁ„o");
+			System.out.println("****Ol√° " + ops.getNome() + "****");
+			System.out.println("1 - Fazer loca√ß√£o");
+			System.out.println("2 - Dar baixa em loca√ß√£o");
+			System.out.println("3 - Excluir loca√ß√£o");
 			System.out.println("4 - Procurar Produto");
 			System.out.println("5 - Procurar Cliente");
 			System.out.println("6 - Voltar a tela de login");
@@ -31,23 +31,23 @@ public class MenuOperador {
 				if (idOP == 1) {
 					System.out.println("Digite a matricula do cliente: ");
 					int matriculaCliente = scanner.nextInt();
-					System.out.println("Digite o cÛdigo do produto: ");
+					System.out.println("Digite o c√≥digo do produto: ");
 					String codigoProduto = scanner.next();
 					ops.fazerLocacao(matriculaCliente, codigoProduto);
 				} else if (idOP == 2) {
 					System.out.println("Digite a matricula do cliente: ");
 					int matriculaCliente = scanner.nextInt();
-					System.out.println("Digite o cÛdigo do produto: ");
+					System.out.println("Digite o c√≥digo do produto: ");
 					String codigoProduto = scanner.next();
 					ops.fazerbaixaLocacao(matriculaCliente, codigoProduto);
 				} else if (idOP == 3) {
 					System.out.println("Digite a matricula do cliente: ");
 					int matriculaCliente = scanner.nextInt();
-					System.out.println("Digite o cÛdigo do produto: ");
+					System.out.println("Digite o c√≥digo do produto: ");
 					String codigoProduto = scanner.next();
 					ops.excluirLocacao(matriculaCliente, codigoProduto);
 				} else if (idOP == 4) {
-					System.out.println("Digite o cÛdigo: ");
+					System.out.println("Digite o c√≥digo: ");
 					String codigo = scanner.next();
 					ops.procurarProduto(codigo);
 				} else if (idOP == 5) {
@@ -60,10 +60,10 @@ public class MenuOperador {
 				} else if (idOP == 7) {
 					System.exit(0);
 				} else {
-					System.out.println("OperaÁ„o inv·lida");
+					System.out.println("Opera√ß√£o inv√°lida");
 				}
 			} catch (NumberFormatException exception) {
-				System.out.println("Formato inv·lido");
+				System.out.println("Formato inv√°lido");
 			}
 		}
 	}
